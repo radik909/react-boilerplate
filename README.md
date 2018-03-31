@@ -101,6 +101,9 @@ There are lot of general guidelines. Here's few that I insist.
   ```
 
 ## Testing
+
+Before testing, make sure to install [watchman](https://github.com/facebook/watchman)
+
 ```
 yarn test (or) npm test
 ```
@@ -112,6 +115,7 @@ For testing in editor, go [here](https://github.com/facebook/create-react-app/bl
 - Never ever push to `master` branch(I'll kill u if u do so in my repo)
 - Always work in a separate branch
 - Rebase branch before raising a `PR`(Pull/Merge Request)
+- Make sure to run tests(`yarn run test`) & validations(`yarn run validate`) before committing the changes.
 
 ### Branch naming conventions
 - Use underscore to join words
@@ -158,7 +162,7 @@ For testing in editor, go [here](https://github.com/facebook/create-react-app/bl
 
 `precommit` hooks are defined in `package.json`
 
-So to make sure code doesn't have any errors(lint, flow, prettier, tests, etc.) before committing, run `yarn validate` to check the errors.
+So to make sure code doesn't have any errors(lint, flow, prettier, etc.) before committing, run `yarn run validate` to check the errors.
 
 ## Deployment
 
