@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
 // import reducers from the respective folders
-const dummy = (state = {}, action) => {
+const dummy = (state = { data: 'Reducer da!' }, action) => {
   switch (action.type) {
     case 'DUMMY':
-      return state;
+      return { ...state, data: action.data };
     default:
       return state;
   }
