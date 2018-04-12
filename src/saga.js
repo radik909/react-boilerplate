@@ -1,3 +1,4 @@
+/*@flow*/
 import { all, put, takeLatest } from 'redux-saga/effects';
 
 // import from separate saga
@@ -12,6 +13,6 @@ function* dummySaga() {
   yield takeLatest('SET_DUMMY', setDummy);
 }
 
-export default function* rootSaga() {
+export default function* rootSaga(): Iterable<any> {
   yield all([dummySaga()]);
 }

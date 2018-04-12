@@ -1,3 +1,4 @@
+/*@flow*/
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -21,10 +22,15 @@ const store = createStore(
 
 sagaMiddleware.run(saga);
 
+const rootElement = document && document.getElementById('root');
+if (!(rootElement instanceof Element)) {
+  throw new Error('Invalid DOM Element');
+}
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  rootElement
 );
 registerServiceWorker();
